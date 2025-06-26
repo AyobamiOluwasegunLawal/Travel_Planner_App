@@ -1,7 +1,12 @@
 import type { Metadata } from "next";
 import React from "react";
+import gsap from "gsap";
+import { ScrollTrigger, SplitText } from "gsap/all";
 import { Montserrat_Alternates } from "next/font/google";
 import "./globals.css";
+import { register } from "node:module";
+
+gsap.registerPlugin(ScrollTrigger, SplitText);
 
 const mont = Montserrat_Alternates({
   subsets: ["latin"],
@@ -20,7 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={` antialiased`}>{children}</body>
+      <body className={`${mont.className} antialiased`}>{children}</body>
     </html>
   );
 }

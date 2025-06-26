@@ -1,9 +1,28 @@
+"use client";
+
 import React from "react";
 import { FaLocationPinLock } from "react-icons/fa6";
 import { FaGithub } from "react-icons/fa";
 import Link from "next/link";
 
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+
 const Header = () => {
+  useGSAP(() => {
+    gsap.fromTo(
+      "header",
+      {
+        opacity: 0,
+        y: -100,
+      },
+      {
+        opacity: 1,
+        y: 0,
+      },
+    );
+  }, []);
+
   return (
     <header>
       <Link href="/">

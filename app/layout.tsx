@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
 import React from "react";
+import gsap from "gsap";
+import { ScrollTrigger, SplitText } from "gsap/all";
 import { Montserrat_Alternates } from "next/font/google";
 import "./globals.css";
+
+gsap.registerPlugin(ScrollTrigger, SplitText);
 
 const mont = Montserrat_Alternates({
   subsets: ["latin"],
