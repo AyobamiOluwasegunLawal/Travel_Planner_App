@@ -1,0 +1,27 @@
+import React from "react";
+import { FaLocationPinLock } from "react-icons/fa6";
+import { FaGithub } from "react-icons/fa";
+import Link from "next/link";
+
+const Header = () => {
+  return (
+    <header>
+      <Link href="/">
+        <div>
+          <FaLocationPinLock className={"size-6"} />
+          TravelPlanner
+        </div>
+      </Link>
+
+      <nav>
+        <Link href="/trips">My Trips</Link>
+        <Link href="/globe">Globe</Link>
+
+        <button>
+          Github <FaGithub className={"size-4"} />
+        </button>
+      </nav>
+    </header>
+  );
+};
+export default Header;
